@@ -1,0 +1,88 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: system-ui, sans-serif;
+}
+
+/* CONTAINER */
+#container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* IMAGES */
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FRONT IMAGE MASK */
+.front {
+  --x: 50%;
+  --y: 50%;
+  clip-path: circle(0px at var(--x) var(--y));
+}
+
+/* TEXT */
+.text {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  pointer-events: none;
+}
+
+.text h1 {
+  font-size: 3rem;
+  letter-spacing: 6px;
+}
+
+.text p {
+  margin-top: 12px;
+  color: #ccc;
+}
+
+/* HIDE DEFAULT CURSOR */
+body {
+  cursor: none;
+}
+
+/* CUSTOM CURSOR */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 255, 0.9) 0%,
+    rgba(0, 120, 255, 0.6) 40%,
+    rgba(0, 60, 255, 0.2) 60%,
+    transparent 70%
+  );
+  filter: blur(4px);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
